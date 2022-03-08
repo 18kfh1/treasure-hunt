@@ -28,6 +28,7 @@
         (corr-exist ?corr - corridor ?from ?to - location)
         (locked ?cor - corridor)
         (is-collapse ?cor - corridor)
+        (key-at ?loc - location ?key - key)
         
     )
 
@@ -68,15 +69,16 @@
         :parameters (?loc - location ?k - key)
 
         :precondition (and
-
             ; IMPLEMENT ME
-
+            (hero-at ?loc)
+            (key-at ?loc ?k)
+            (not(has-key))
         )
 
         :effect (and
-
             ; IMPLEMENT ME
-
+            (not (key-at ?loc ?k))
+            (has-key)
         )
     )
 
