@@ -20,7 +20,7 @@
     (:predicates
 
         ; One predicate given for free!
-        (hero-at ?loc - location)
+        (hero-at ?loc - lsocation)
 
         ; IMPLEMENT ME
         (has-key)
