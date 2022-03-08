@@ -23,12 +23,15 @@
         (hero-at ?loc - lsocation)
 
         ; IMPLEMENT ME
-        (has-key)
+        (arm-free)
+        (has-key ?k - key)
         (wants-move ?to - location)
         (corr-exist ?corr - corridor ?from ?to - location)
         (locked ?cor - corridor)
         (is-collapse ?cor - corridor)
+        (is-risky ?cor - corridor)
         (key-at ?loc - location ?key - key)
+
         
     )
 
@@ -50,6 +53,7 @@
             (wants-move ?to)
             (corr-exist ?cor ?from ?to)
             (not (locked ?cor))
+            (is-risky ?cor)
         )
 
         :effect (and
@@ -72,13 +76,13 @@
             ; IMPLEMENT ME
             (hero-at ?loc)
             (key-at ?loc ?k)
-            (not(has-key))
+            (arm-free)
         )
 
         :effect (and
             ; IMPLEMENT ME
             (not (key-at ?loc ?k))
-            (has-key)
+            (not(arm-free))
         )
     )
 
@@ -91,15 +95,15 @@
         :parameters (?loc - location ?k - key)
 
         :precondition (and
-
             ; IMPLEMENT ME
-
+            (has-key ?k)
+            (hero-at ?loc)
         )
 
         :effect (and
-
             ; IMPLEMENT ME
-
+            (not(has-key))
+            (arm-free)
         )
     )
 
@@ -117,8 +121,9 @@
         :parameters (?loc - location ?cor - corridor ?col - colour ?k - key)
 
         :precondition (and
-
             ; IMPLEMENT ME
+
+
 
         )
 
