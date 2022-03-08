@@ -23,7 +23,12 @@
         (hero-at ?loc - location)
 
         ; IMPLEMENT ME
-
+        (has-key)
+        (wants-move ?to - location)
+        (corr-exist ?corr - corridor ?from ?to - location)
+        (locked ?cor - corridor)
+        (is-collapse ?cor - corridor)
+        
     )
 
     ; IMPORTANT: You should not change/add/remove the action names or parameters
@@ -39,15 +44,17 @@
         :parameters (?from ?to - location ?cor - corridor)
 
         :precondition (and
-
             ; IMPLEMENT ME
-
+            (hero-at ?from)
+            (wants-move ?to)
+            (corr-exist ?cor ?from ?to)
+            (not (locked ?cor))
         )
 
         :effect (and
-
             ; IMPLEMENT ME
-
+            (hero-at ?to)
+            (not(is-collapse ?cor)) 
         )
     )
 
