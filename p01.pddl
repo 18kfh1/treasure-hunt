@@ -51,11 +51,12 @@
     (key-colour key4 purple)
 
     ; Key usage properties (one use, two use, etc)
-    
+
   )
   (:goal
     (and
       ; Hero's final location goes here
+      (hero-at loc31)
     )
   )
 
