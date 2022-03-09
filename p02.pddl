@@ -14,7 +14,7 @@
 
     ; Hero location and carrying status
     (hero-at loc22)
-    ; Locationg <> Corridor Connections
+    ; Locating <> Corridor Connections
     (corr-exist c2122 loc21 loc22)
     (corr-exist c1222 loc12 loc22)
     (corr-exist c2232 loc22 loc32)
@@ -32,7 +32,7 @@
     (locked c2232 yellow)
     (locked c3242 rainbow)
     ; Risky corridors
-    
+
     ; Key colours
     (key-colour key1 purple)
     (key-colour key2 green)
