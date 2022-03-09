@@ -27,6 +27,7 @@
         ;(corr-from ?cor - corridor ?from - location)
         ;(corr-to ?cor - corridor ?to - location)
         (corr-exist ?cor - corridor ?from ?to -location)
+        (no-lock ?cor - corridor)
         (locked ?cor - corridor ?col - colour)
         (is-collapse ?cor - corridor)
         (is-risky ?cor - corridor)
@@ -57,7 +58,7 @@
         :precondition (and
             (hero-at ?from)
             (corr-exist ?cor ?from ?to)
-            (not (locked ?cor))
+            (not(locked ?cor)) 
         )
 
         :effect (and
