@@ -25,7 +25,7 @@
         ; IMPLEMENT ME
         (arm-free)
         (has-key ?k - key)
-        (key-colour ?col - colour)
+        (key-colour ?k - key ?col - colour)
         (wants-move ?to - location)
         (corr-exist ?corr - corridor ?from ?to - location)
         (locked ?cor - corridor ?col - colour)
