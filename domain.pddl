@@ -59,6 +59,7 @@
             (hero-at ?from)
             (corr-exist ?cor ?from ?to)
             (not(locked ?cor)) 
+            (not(is-collapse ?cor))
         )
 
         :effect (and
