@@ -27,6 +27,7 @@
         ;(corr-from ?cor - corridor ?from - location)
         ;(corr-to ?cor - corridor ?to - location)
         (corr-exist ?cor - corridor ?from ?to -location)
+        (no-lock ?cor - corridor)
         (locked ?cor - corridor ?col - colour)
         (is-collapse ?cor - corridor)
         (is-risky ?cor - corridor)
@@ -57,7 +58,7 @@
         :precondition (and
             (hero-at ?from)
             (corr-exist ?cor ?from ?to)
-            (not (locked ?cor))
+            (not(locked ?cor)) 
         )
 
         :effect (and
@@ -128,13 +129,13 @@
             (locked ?cor ?col)
             (key-colour ?k ?col)
             (hero-at ?loc)
-            (corr-exist ?cor ?loc)
+            (corr-exist ?cor ?loc ?loc)
         )  
 
         :effect (and
             (not(locked ?cor ?col))
-            (when (one-use ?k) (no-use ?k))
-            (when (two-use ?k) (one-use ?k))
+            (when (one-use ?k) (and(no-use ?k)(not(one-use ?k))))
+            (when (two-use ?k) (and(one-use ?k) (not(two-use ?k))))
             ;(when (multi-use ?k) (multi-use ?k))
         )
     )
