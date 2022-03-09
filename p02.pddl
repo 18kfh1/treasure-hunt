@@ -26,15 +26,18 @@
     (key-at loc12 key3)
     (key-at loc23 key4)
     ; Locked corridors
-    (locked c2122)
-    (locked c1222)
-    (locked c2223)
-    (locked c2232)
-    (locked c3242)
-
+    (locked c2122 purple)
+    (locked c1222 yellow)
+    (locked c2223 green)
+    (locked c2232 yellow)
+    (locked c3242 rainbow)
     ; Risky corridors
 
     ; Key colours
+    (key-colour key1 purple)
+    (key-colour key2 green)
+    (key-colour key3 rainbow)
+    (key-colour key4 yellow)
 
     ; Key usage properties (one use, two use, etc)
 
