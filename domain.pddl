@@ -20,7 +20,7 @@
     (:predicates
 
         ; One predicate given for free!
-        (hero-at ?loc - lsocation)
+        (hero-at ?loc - location)
 
         ; IMPLEMENT ME
         (arm-free)
