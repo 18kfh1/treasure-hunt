@@ -45,7 +45,6 @@
     (is-risky c2434)
 
     ; Key colours
-    
 
     ; Key usage properties (one use, two use, etc)
 

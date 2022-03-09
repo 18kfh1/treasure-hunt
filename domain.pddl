@@ -25,12 +25,14 @@
         ; IMPLEMENT ME
         (arm-free)
         (has-key ?k - key)
+        (key-colour ?col - colour)
         (wants-move ?to - location)
         (corr-exist ?corr - corridor ?from ?to - location)
-        (locked ?cor - corridor)
+        (locked ?cor - corridor ?col - colour)
         (is-collapse ?cor - corridor)
         (is-risky ?cor - corridor)
         (key-at ?loc - location ?key - key)
+        (key-has-uses ?k - key)
 
         
     )
@@ -122,9 +124,11 @@
 
         :precondition (and
             ; IMPLEMENT ME
-
-
-
+            (has-key ?k)
+            (key-has-uses ?k)
+            (locked ?cor ?col)
+            (has-key ?k ?col)
+            ()
         )
 
         :effect (and

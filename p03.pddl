@@ -15,8 +15,6 @@
     ; Hero location and carrying status
     (hero-at loc21)
     ; Locationg <> Corridor Connections
-    (corr-exist c3132 loc31 loc32)
-    
     ; Key locations
 
     ; Locked corridors
