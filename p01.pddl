@@ -34,17 +34,18 @@
     (key-at loc44 key4)
 
     ; Locked corridors
-    (locked c2324)
-    (locked c3132)
-    (locked c2434)
-    (locked c3242)
-    (locked c3444)
+    (locked c2324 red)
+    (locked c3132 rainbow)
+    (locked c2434 red)
+    (locked c3242 purple)
+    (locked c3444 yellow)
 
     ; Risky corridors
     (is-risky c2324)
     (is-risky c2434)
 
     ; Key colours
+    (key-colour )
 
     ; Key usage properties (one use, two use, etc)
 
