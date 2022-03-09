@@ -21,19 +21,23 @@
 
         ; One predicate given for free!
         (hero-at ?loc - location)
-
-        ; IMPLEMENT ME
         (arm-free)
         (has-key ?k - key)
-        (key-colour ?k - key ?col - colour)
-        (wants-move ?to - location)
-        (corr-exist ?corr - corridor ?from ?to - location)
-        (corr-to ?corr - corridor ?to - location)
+
+        ;(corr-from ?cor - corridor ?from - location)
+        ;(corr-to ?cor - corridor ?to - location)
+        (corr-exist ?cor - corridor ?from ?to -location)
         (locked ?cor - corridor ?col - colour)
         (is-collapse ?cor - corridor)
         (is-risky ?cor - corridor)
+
         (key-at ?loc - location ?key - key)
-        (key-has-uses ?k - key)
+        (one-use ?k - key)
+        (two-use ?k - key)
+        (multi-use ?k - key)
+        (no-use ?k - key)
+        (key-has-uses)
+        (key-colour ?k - key ?col - colour)
 
         
     )
@@ -51,18 +55,14 @@
         :parameters (?from ?to - location ?cor - corridor)
 
         :precondition (and
-            ; IMPLEMENT ME
             (hero-at ?from)
-            (wants-move ?to)
             (corr-exist ?cor ?from ?to)
             (not (locked ?cor))
-            (is-risky ?cor)
         )
 
         :effect (and
-            ; IMPLEMENT ME
+            (when (is-risky ?cor) (is-collapse ?cor))
             (hero-at ?to)
-            (not(is-collapse ?cor)) 
         )
     )
 
@@ -76,15 +76,14 @@
         :parameters (?loc - location ?k - key)
 
         :precondition (and
-            ; IMPLEMENT ME
             (hero-at ?loc)
             (key-at ?loc ?k)
             (arm-free)
         )
 
         :effect (and
-            ; IMPLEMENT ME
-            (not (key-at ?loc ?k))
+            (not (key-at ?loc ?k)) 
+            (has-key ?k)
             (not(arm-free))
         )
     )
@@ -98,15 +97,15 @@
         :parameters (?loc - location ?k - key)
 
         :precondition (and
-            ; IMPLEMENT ME
             (has-key ?k)
             (hero-at ?loc)
+            (not(arm-free))
         )
 
         :effect (and
-            ; IMPLEMENT ME
-            (not(has-key))
-            (arm-free)
+            (not(has-key ?k))
+            (key-at ?loc ?k)
+            (arm-free) ;OR IS THIS (NOT(ARM-FREE))
         )
     )
 
@@ -124,20 +123,19 @@
         :parameters (?loc - location ?cor - corridor ?col - colour ?k - key)
 
         :precondition (and
-            ; IMPLEMENT ME
             (has-key ?k)
             (key-has-uses ?k)
             (locked ?cor ?col)
             (key-colour ?k ?col)
             (hero-at ?loc)
-            (corr-to ?loc)
-        )
+            (corr-exist ?cor ?loc)
+        )  
 
         :effect (and
-            ; IMPLEMENT ME
-            
-
-
+            (not(locked ?cor ?col))
+            (when (one-use ?k) (no-use ?k))
+            (when (two-use ?k) (one-use ?k))
+            ;(when (multi-use ?k) (multi-use ?k))
         )
     )
 
