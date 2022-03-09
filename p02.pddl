@@ -31,8 +31,9 @@
     (locked c2223)
     (locked c2232)
     (locked c3242)
+
     ; Risky corridors
-    
+
     ; Key colours
 
     ; Key usage properties (one use, two use, etc)
