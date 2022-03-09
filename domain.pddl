@@ -20,7 +20,7 @@
     (:predicates
 
         ; One predicate given for free!
-        (hero-at ?loc - lsocation)
+        (hero-at ?loc - location)
 
         ; IMPLEMENT ME
         (arm-free)
@@ -128,7 +128,6 @@
             (key-has-uses ?k)
             (locked ?cor ?col)
             (has-key ?k ?col)
-            ()
         )
 
         :effect (and
