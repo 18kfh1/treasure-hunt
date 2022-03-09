@@ -22,6 +22,12 @@
     (corr-exist c3242 loc32 loc42)
     (corr-exist c2223 loc22 loc23)
 
+    (corr-exist c2122 loc22 loc21)
+    (corr-exist c1222 loc22 loc12)
+    (corr-exist c2232 loc32 loc22)
+    (corr-exist c3242 loc42 loc32)
+    (corr-exist c2223 loc23 loc22)
+
     ; Key locations
     (key-at loc22 key1)
     (key-at loc21 key2)

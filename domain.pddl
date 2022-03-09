@@ -128,13 +128,13 @@
             (locked ?cor ?col)
             (key-colour ?k ?col)
             (hero-at ?loc)
-            (corr-exist ?cor ?loc)
+            (corr-exist ?cor ?loc ?loc)
         )  
 
         :effect (and
             (not(locked ?cor ?col))
-            (when (one-use ?k) (no-use ?k))
-            (when (two-use ?k) (one-use ?k))
+            (when (one-use ?k) (and(no-use ?k)(not(one-use ?k))))
+            (when (two-use ?k) (and(one-use ?k) (not(two-use ?k))))
             ;(when (multi-use ?k) (multi-use ?k))
         )
     )

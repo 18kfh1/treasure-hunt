@@ -38,6 +38,29 @@
     (corr-exist c4544 loc45 loc44)
     (corr-exist c4443 loc44 loc43)
 
+    (corr-exist c2122 loc22 loc21)
+    (corr-exist c1222 loc22 loc12)
+    (corr-exist c2232 loc32 loc22)
+    (corr-exist c1213 loc13 loc12)
+    (corr-exist c1223 loc23 loc12)
+    (corr-exist c2223 loc23 loc22)
+    (corr-exist c3223 loc23 loc32)
+    (corr-exist c3233 loc33 loc32)
+    (corr-exist c2333 loc33 loc23)
+    (corr-exist c1314 loc14 loc13)
+    (corr-exist c1323 loc23 loc13)
+    (corr-exist c2314 loc14 loc23)
+    (corr-exist c2324 loc24 loc23)
+    (corr-exist c2334 loc34 loc23)
+    (corr-exist c3334 loc34 loc33)
+    (corr-exist c1424 loc24 loc14)
+    (corr-exist c2434 loc34 loc24)
+    (corr-exist c2425 loc25 loc24)
+    (corr-exist c2535 loc35 loc25)
+    (corr-exist c3545 loc45 loc35)
+    (corr-exist c4544 loc44 loc45)
+    (corr-exist c4443 loc43 loc44)
+
     ; Key locations
     (key-at loc21 key1)
     (key-at loc23 key2)
@@ -80,6 +103,12 @@
     (key-colour key6 rainbow)
 
     ; Key usage properties (one use, two use, etc)
+    (multi-use key1)
+    (one-use key2)
+    (one-use key3)
+    (one-use key4)
+    (one-use key5)
+    (one-use key6)
 
   )
   (:goal
