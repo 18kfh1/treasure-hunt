@@ -54,6 +54,11 @@
     (key-colour key5 rainbow)
 
     ; Key usage properties (one use, two use, etc)
+    (two-use key1)
+    (one-use key2)
+    (one-use key3)
+    (multi-use key4)
+    (one-use key5)
 
   )
   (:goal
