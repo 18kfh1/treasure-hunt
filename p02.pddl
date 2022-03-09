@@ -51,7 +51,7 @@
   )
   (:goal
     (and
-      ; Hero's final location goes here
+      (hero-at loc42)
     )
   )
 
