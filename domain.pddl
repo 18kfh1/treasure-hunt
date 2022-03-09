@@ -28,6 +28,7 @@
         (key-colour ?k - key ?col - colour)
         (wants-move ?to - location)
         (corr-exist ?corr - corridor ?from ?to - location)
+        (corr-to ?corr - corridor ?to - location)
         (locked ?cor - corridor ?col - colour)
         (is-collapse ?cor - corridor)
         (is-risky ?cor - corridor)
@@ -127,12 +128,15 @@
             (has-key ?k)
             (key-has-uses ?k)
             (locked ?cor ?col)
-            (has-key ?k ?col)
+            (key-colour ?k ?col)
+            (hero-at ?loc)
+            (corr-to ?loc)
         )
 
         :effect (and
-
             ; IMPLEMENT ME
+            
+
 
         )
     )
