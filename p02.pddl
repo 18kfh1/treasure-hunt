@@ -32,7 +32,7 @@
     (locked c2232 yellow)
     (locked c3242 rainbow)
     ; Risky corridors
-    
+
     ; Key colours
     (key-colour key1 purple)
     (key-colour key2 green)
