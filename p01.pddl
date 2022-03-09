@@ -13,19 +13,45 @@
   (:init
 
     ; Hero location and carrying status
-
+    (hero-at loc12)
     ; Locationg <> Corridor Connections
+    (corr-exist c3132 loc31 loc32)
+    (corr-exist c1222 loc12 loc22)
+    (corr-exist c2232 loc22 loc32)
+    (corr-exist c3242 loc32 loc42)
+    (corr-exist c2223 loc22 loc23)
+    (corr-exist c3233 loc32 loc33)
+    (corr-exist c2333 loc23 loc33)
+    (corr-exist c2324 loc23 loc24)
+    (corr-exist c3334 loc33 loc34)
+    (corr-exist c2434 loc24 loc34)
+    (corr-exist c3444 loc34 loc44)
 
     ; Key locations
+    (key-at loc22 key1)
+    (key-at loc42 key2)
+    (key-at loc24 key3)
+    (key-at loc44 key4)
 
     ; Locked corridors
+    (locked c2324 red)
+    (locked c3132 rainbow)
+    (locked c2434 red)
+    (locked c3242 purple)
+    (locked c3444 yellow)
 
     ; Risky corridors
+    (is-risky c2324)
+    (is-risky c2434)
 
     ; Key colours
+    (key-colour key1 red)
+    (key-colour key2 rainbow)
+    (key-colour key3 yellow)
+    (key-colour key4 purple)
 
     ; Key usage properties (one use, two use, etc)
-
+    
   )
   (:goal
     (and
