@@ -45,10 +45,13 @@
     (is-risky c2434)
 
     ; Key colours
-    (key-colour )
+    (key-colour key1 red)
+    (key-colour key2 rainbow)
+    (key-colour key3 yellow)
+    (key-colour key4 purple)
 
     ; Key usage properties (one use, two use, etc)
-
+    
   )
   (:goal
     (and
