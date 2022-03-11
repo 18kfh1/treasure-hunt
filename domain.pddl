@@ -20,25 +20,23 @@
     (:predicates
 
         ; One predicate given for free!
+        ; Hero predicates
         (hero-at ?loc - location)
         (arm-free)
         (has-key ?k - key)
 
-        ;(corr-from ?cor - corridor ?from - location)
-        ;(corr-to ?cor - corridor ?to - location)
-        (corr-exist ?cor - corridor ?from ?to -location)
-        (no-lock ?cor - corridor)
+        ; Corridor predicates 
         (locked ?cor - corridor ?col - colour)
-        (lock ?cor - corridor)
-        (is-collapse ?cor - corridor)
+        (unlocked ?cor - corridor)
         (is-risky ?cor - corridor)
+        (corr-exist ?cor - corridor ?loc -location) 
 
+        ; Key predicates
         (key-at ?loc - location ?key - key)
         (one-use ?k - key)
         (two-use ?k - key)
         (multi-use ?k - key)
         (no-use ?k - key)
-        (key-has-uses ?k - key)
         (key-colour ?k - key ?col - colour)
 
         
@@ -57,15 +55,17 @@
         :parameters (?from ?to - location ?cor - corridor)
 
         :precondition (and
-            (hero-at ?from)
-            (corr-exist ?cor ?from ?to)
-            (not(lock ?cor)) 
-            (not(is-collapse ?cor))
+            (hero-at ?from) 
+            ;(not (hero-at ?to)) SHE HAS THIS 
+            (corr-exist ?cor ?from)
+            (corr-exist ?cor ?to)
+            (unlocked ?cor)
         )
 
         :effect (and
-            (when (is-risky ?cor) (is-collapse ?cor))
+            (when (is-risky ?cor) (and (not (corr-exist ?cor ?from)) (not (corr-exist ?cor ?to))))
             (hero-at ?to)
+            (not(hero-at ?from))
         )
     )
 
@@ -79,9 +79,9 @@
         :parameters (?loc - location ?k - key)
 
         :precondition (and
-            (hero-at ?loc)
-            (key-at ?loc ?k)
-            (arm-free)
+        (hero-at ?loc)
+        (key-at ?loc ?k)
+        (arm-free)
         )
 
         :effect (and
@@ -126,20 +126,18 @@
         :parameters (?loc - location ?cor - corridor ?col - colour ?k - key)
 
         :precondition (and
-            (has-key ?k)
-            (key-has-uses ?k)
-            (locked ?cor ?col)
-            (key-colour ?k ?col)
             (hero-at ?loc)
-            (corr-exist ?cor ?loc ?loc)
+            (has-key ?k)
+            (locked ?cor ?col)
+            (corr-exist ?cor ?loc)
+            (not(no-use ?k)) 
+            (key-colour ?k ?col)
         )  
 
         :effect (and
-            (not(locked ?cor ?col))
-            (not(lock ?cor))
-            (when (one-use ?k) (and(no-use ?k)(not(one-use ?k))))
-            (when (two-use ?k) (and(one-use ?k) (not(two-use ?k))))
-            (when (multi-use ?k) (multi-use ?k))
+            (unlocked ?cor)
+            (when (one-use ?k) (no-use ?k))
+            (when (two-use ?k) (one-use ?k))
         )
     )
 
