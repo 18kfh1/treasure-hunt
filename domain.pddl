@@ -54,7 +54,6 @@
 
         :precondition (and
             (hero-at ?from) 
-            ;(not (hero-at ?to)) SHE HAS THIS 
             (corr-exist ?cor ?from)
             (corr-exist ?cor ?to)
             (unlocked ?cor)
@@ -106,7 +105,7 @@
         :effect (and
             (not(has-key ?k))
             (key-at ?loc ?k)
-            (arm-free) ;OR IS THIS (NOT(ARM-FREE))
+            (arm-free) 
         )
     )
 
