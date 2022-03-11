@@ -70,7 +70,6 @@
     (two-use key1)
     (one-use key2)
     (one-use key3)
-    (multi-use key4)
     (one-use key5)
 
   )

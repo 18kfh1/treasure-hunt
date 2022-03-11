@@ -14,6 +14,7 @@
 
     ; Hero location and carrying status
     (hero-at loc22)
+    (arm-free)
 
     ; Locationg <> Corridor Connections
     (corr-exist c2122 loc21)
