@@ -35,10 +35,8 @@
         (key-at ?loc - location ?key - key)
         (one-use ?k - key)
         (two-use ?k - key)
-        (multi-use ?k - key)
         (no-use ?k - key)
         (key-colour ?k - key ?col - colour)
-
         
     )
 

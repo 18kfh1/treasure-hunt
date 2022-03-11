@@ -72,7 +72,6 @@
     (key-colour key4 purple)
 
     ; Key usage properties (one use, two use, etc)
-    (multi-use key1)
     (one-use key2)
     (two-use key3)
     (one-use key4)
