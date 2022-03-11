@@ -17,16 +17,26 @@
 
     ; Hero location and carrying status
     (hero-at loc11)
+    (arm-free)
 
     ; Locationg <> Corridor Connections
-    (corr-exist c1121 loc11 loc21)
-    (corr-exist c2131 loc21 loc31)
-    (corr-exist c3141 loc31 loc41)
-    (corr-exist c4151 loc41 loc51)
-    (corr-exist c5161 loc51 loc61)
-    (corr-exist c1142 loc11 loc41)
-    (corr-exist c4271 loc42 loc71)
-    (corr-exist c7181 loc71 loc81)
+    (corr-exist c1121 loc11)
+    (corr-exist c2131 loc21)
+    (corr-exist c3141 loc31)
+    (corr-exist c4151 loc41)
+    (corr-exist c5161 loc51)
+    (corr-exist c1142 loc11)
+    (corr-exist c4271 loc42)
+    (corr-exist c7181 loc71)
+
+    (corr-exist c1121 loc21)
+    (corr-exist c2131 loc31)
+    (corr-exist c3141 loc41)
+    (corr-exist c4151 loc51)
+    (corr-exist c5161 loc61)
+    (corr-exist c1142 loc41)
+    (corr-exist c4271 loc71)
+    (corr-exist c7181 loc81)
 
     ; Key locations
     (key-at loc11 key1)
@@ -42,6 +52,9 @@
     (locked c4151 purple)
     (locked c1142 red)
     (locked c4271 rainbow)
+
+    (unlocked c5161)
+    (unlocked c7181)
 
     ; Risky corridors
     (is-risky c1142)
