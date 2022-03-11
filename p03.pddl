@@ -115,7 +115,6 @@
     (key-colour key6 rainbow)
 
     ; Key usage properties (one use, two use, etc)
-    (multi-use key1)
     (one-use key2)
     (one-use key3)
     (one-use key4)
