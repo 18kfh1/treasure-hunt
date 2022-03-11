@@ -51,6 +51,12 @@
     (locked c2434 red)
     (locked c3242 purple)
     (locked c3444 yellow)
+    
+    (lock c2324)
+    (lock c3132)
+    (lock c2434)
+    (lock c3242)
+    (lock c3444)
 
     ; Risky corridors
     (is-risky c2324)
